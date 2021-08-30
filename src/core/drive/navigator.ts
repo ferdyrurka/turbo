@@ -89,7 +89,7 @@ export class Navigator {
         }
 
         const { statusCode } = fetchResponse
-        const visitOptions = { response: { statusCode, responseHTML } }
+        const visitOptions = { response: { statusCode, responseHTML }, historyChanged: formSubmission.method !== FetchMethod.get }
         this.proposeVisit(fetchResponse.location, visitOptions)
       }
     }
